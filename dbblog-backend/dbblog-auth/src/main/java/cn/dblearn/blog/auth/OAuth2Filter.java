@@ -5,6 +5,7 @@ import cn.dblearn.blog.common.Result;
 import cn.dblearn.blog.common.exception.enums.ErrorEnum;
 import cn.dblearn.blog.common.util.HttpContextUtils;
 import cn.dblearn.blog.common.util.JsonUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
@@ -25,6 +26,7 @@ import javax.servlet.http.HttpServletResponse;
  * @email 571002217@qq.com
  * @description
  */
+@Slf4j
 public class OAuth2Filter extends AuthenticatingFilter {
 
     @Override
@@ -90,6 +92,7 @@ public class OAuth2Filter extends AuthenticatingFilter {
     private String getRequestToken(HttpServletRequest httpRequest){
         //从header中获取token
         String token = httpRequest.getHeader("token");
+        log.info("我是filter{}",token);
 
         //如果header中不存在token，则从参数中获取token
         if(StringUtils.isEmpty(token)){

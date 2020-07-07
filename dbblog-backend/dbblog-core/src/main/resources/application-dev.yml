@@ -3,9 +3,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
     druid:
-      url: jdbc:mysql://localhost:3306/dbblog?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+      url: jdbc:mysql://ruiyeclub.cn/dbblog?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
       username: root
-      password: 123456
+      password: admin
       initial-size: 10
       max-active: 100
       min-idle: 10
@@ -49,7 +49,7 @@ spring:
       cluster-nodes: 127.0.0.1:9300
   # rabbitMQ配置
   rabbitmq:
-    host: 127.0.0.1
+    host: ruiyeclub.cn
     port: 5672
     username: guest
     password: guest
